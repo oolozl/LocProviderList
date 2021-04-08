@@ -31,17 +31,19 @@ public class LocProviderListActivity extends AppCompatActivity {
 
                 locProvList = lm.getAllProviders();
 
+
                 String s = "";
-                for (int i = 0; i < locProvList.size(); i++) {
-                    s += "Loc.Provider: " + locProvList.get(i) + "\n"
-                            + "Status: " + lm.isProviderEnabled(locProvList.get(i)) + "\n\n";
-                }
+
                 mTextView.setText(s);
+
+                for (String locProvList : locProvList){
+                    mTextView.append("Loc.Provider: "+locProvList+"\n");
+                    mTextView.append("Status: "+lm.isProviderEnabled(locProvList)+"\n");
+
+                }
             }
-
-
         });
-
-    }
 }
+}
+
 
